@@ -4,7 +4,7 @@ app.get('/', function(req, res) {
             console.log(err.message);
         }
         else {
-
+        console.log('opened account: ', account);
         var howls_per_page = 25;
         turbulence.queryPost( 
             {}, 
@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
                     console.log(err.message);
                 }
                 else {
-
+                    console.log(howls);
                     res.local('howls', howls);
                     res.local('account', account);
                     res.local('title', 'Howler');
