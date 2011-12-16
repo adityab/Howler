@@ -4,6 +4,7 @@ var loadFacebookAccount = function(facebook_details, callback) {
        else {
 
        if(account) {
+            console.log('account exists in DB.', account);
            callback(null, account);
        }
        else {
@@ -18,7 +19,7 @@ var loadFacebookAccount = function(facebook_details, callback) {
                        gender: facebook_details.user.gender,
                        identities: [
                                     { key: 'email', val: facebook_details.user.email },
-                                    { key: 'facebook', val: facebook.details.user.id }
+                                    { key: 'facebook', val: facebook_details.user.id }
                                    ]
                    }
                }
@@ -27,6 +28,7 @@ var loadFacebookAccount = function(facebook_details, callback) {
            turbulence.registerAgent(user, function(err, userId) {
                if(err)  callback(err);
                else {
+                   console.log('registered agent');
                    user._id = userId;
                    callback(null, user);
                }
