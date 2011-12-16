@@ -5,7 +5,7 @@ app.get('/', function(req, res) {
         }
         else {
         console.log('opened account: ', account);
-        var howls_per_page = 25;
+        var howls_per_page = 100;
         turbulence.queryPost( 
             {}, 
             { sort: [['date', 'descending']], limit: howls_per_page },
