@@ -1,0 +1,13 @@
+h2(style='font-weight:bold;font-size:20px;text-align:center;')='@'+user.username
+
+-if(account && account.data.content.username && account.data.content.username == user.username)
+  h2(style='font-weight:bold;padding-bottom:5px;') Whats going on?
+  form(action='/howl',method='post')
+    textarea(name='howl',style='width:550px;')
+    input(type='submit',value='Howl!',style='background-color:#000000;border:solid;border-color:#666666;border-width:1px;color:#E3E3E3;padding:5px;font-weight:bold;cursor:pointer;position:relative;top:-15px;margin-left:5px;')
+
+div(style='width:600px;')
+  -for(var i=0;i<howls.length;i++)
+    div(style='background-color:#000000;padding:10px;margin-top:5px;border:solid;border-color:#666666;border-width:1px;')
+      span=howls[i].data.content.text
+      div(style='color:#999999;font-size:12px;')=howLongAgo(nods[i].date)+' ago'

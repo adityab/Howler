@@ -1,0 +1,26 @@
+!!!
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet',type='text/css',href='http://yui.yahooapis.com/2.8.2r1/build/reset/reset-min.css')
+    link(rel='stylesheet',type='text/css',href='/css/style.css')
+    script(type='text/javascript',src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js')
+    script(type='text/javascript',src='/js/main.js')
+    script(type='text/javascript',src='http://static.ak.fbcdn.net/connect/en_US/core.js')
+  body
+    div.center
+      -if(account && account.data.content.username)
+        div(style='float:right;margin-top:20px;position:relative;left:-60px;')
+          a(href='/'+account.data.content.username,style='margin-right:20px;')=account.data.content.username
+          a(href='/logout') Logout
+      -else if(!account)
+        div#facebook_login(style='position:relative;float:right;width:200px;padding-top:10px;')
+          div#fb-login.fb_button(style='float:left; background-position: left -188px')                
+            a.fb_button_medium(href='/auth/facebook')
+              span#fb_login_text.fb_button_text Connect with Facebook
+      h2 
+        span An example Turbulence app
+      h1 
+        a(href='/',style='color:#B9C949;') Howler
+      div
+        != body
