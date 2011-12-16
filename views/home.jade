@@ -1,11 +1,13 @@
 -if(account && account.data.content.username)
-  h2(style='font-weight:bold;padding-bottom:5px;') Whats going on?
-  form(action='/howl',method='post')
-    textarea(name='howl',style='width:550px;')
-    input(type='submit',value='Howl',style='background-color:#000000;border:solid;border-color:#666666;border-width:1px;color:#E3E3E3;padding:5px;font-weight:bold;cursor:pointer;position:relative;top:-15px;margin-left:5px;')
+    div(style='margin-left: 30%; margin-right: 30%;')
+      h5 What do you want to howl about?
+      form(action='/howl',method='post')
+        input(type='submit',value='Howl!',class='btn primary')
+        textarea(name='howl', style: 'width: 100%;');
 
-div(style='width:600px;')
+div(class='bordered-table zebra-striped', style='margin-left: 30%; margin-right: 30%;')
   -for(var i=0;i<howls.length;i++)
-    div(style='background-color:#000000;padding:10px;margin-top:5px;border:solid;border-color:#666666;border-width:1px;')
+    blockquote
       span=howls[i].data.content.text
-      div(style='color:#999999;font-size:12px;')=howLongAgo(howls[i].date)+' ago'
+      div(style='color:#999999;font-size:12px;')=howLongAgo(howls[i].date)+' ago by '
+      a(href='/'+howls[i].data.content.tags[0])=howls[i].data.content.tags[1]+' '+howls[i].data.content.tags[2]
