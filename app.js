@@ -13,7 +13,7 @@ app = module.exports = express.createServer('127.0.0.1');
 
 // Connect to the Turbulence engine
 turbulence = require('turbulence-engine')
-turbulence.connect('localhost', 'howlers');
+turbulence.connect('localhost', 'howler_db');
 
 connect = require('connect');
 auth = require('connect-auth');
