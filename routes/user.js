@@ -8,7 +8,7 @@ app.get('/:username', function(req, res) {
                     if(!user)
                         console.log('could not find user');
                     else {
-                        var howls_per_page = 25;
+                        var howls_per_page = 100;
                         turbulence.queryPost(
                             {authorAgent: user._id},
                             {sort: [['date', 'descending']], limit: howls_per_page},
