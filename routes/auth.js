@@ -16,7 +16,10 @@ app.get('/auth/facebook', function(req, res) {
             loadAccount(req, function(err, account) {
                 if(err) console.log(err.message);
                 else {
-                    res.redirect('/');
+                    console.log(req.headers.referer);
+                    if(req.headers.referer.substring(0,23) == 'http://www.facebook.com'){
+                        res.redirect('/');
+                    }
                 }
             });
         }
