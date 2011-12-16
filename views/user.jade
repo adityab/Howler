@@ -1,6 +1,6 @@
-h2(style='font-weight:bold;font-size:20px;text-align:center;')='@'+user.username
+h2(style='font-weight:bold;font-size:20px;text-align:center;')='@'+user.data.content.username
 
--if(account && account.data.content.username && account.data.content.username == user.username)
+-if(account && account.data.content.username && account.data.content.username == user.data.content.username)
   h2(style='font-weight:bold;padding-bottom:5px;') Whats going on?
   form(action='/howl',method='post')
     textarea(name='howl',style='width:550px;')
