@@ -11,7 +11,7 @@ html(lang="en")
     div.center
       -if(account && account.data.content.username)
         div(style='float:right;margin-top:20px;position:relative;left:-60px;')
-          a(href='/'+account.data.content.username,style='margin-right:20px;')=account.data.content.username
+          a(href='/'+account.data.content.username,style='margin-right:20px;')=account.data.content.firstName+' '+account.data.content.lastName
           a(href='/logout') Logout
       -else if(!account)
         div#facebook_login(style='position:relative;float:right;width:200px;padding-top:10px;')
