@@ -4,7 +4,7 @@ var loadFacebookAccount = function(facebook_details, callback) {
        else {
 
        if(account) {
-            console.log('account exists in DB.', account);
+          console.log(account.data.content.username + ' just logged in.');
            callback(null, account);
        }
        else {
