@@ -15,6 +15,7 @@ app.get('/:username', function(req, res) {
                             function(err, howls) {
                                 if(err) console.log(err.message);
                                 else {
+                                    console.log(howls);
                                     res.local('user', user);
                                     res.local('howls', howls);
                                     res.local('account', account);
