@@ -10,4 +10,4 @@ div(class='bordered-table zebra-striped', style='margin-left: 30%; margin-right:
     blockquote
       span=howls[i].data.content.text
       div(style='color:#999999;font-size:12px;')=howLongAgo(howls[i].date)+' ago by '
-      a(href='/'+howls[i].data.content.tags[0])=howls[i].data.content.tags[1]+' '+howls[i].data.content.tags[2]
+      a(href='/'+howls[i].data.content.tags[0], class='label notice')=howls[i].data.content.tags[1]+' '+howls[i].data.content.tags[2]
