@@ -52,6 +52,7 @@ require('./routes/home.js');
 require('./routes/auth.js');
 require('./routes/howl.js');
 require('./routes/user.js');
+require('./routes/about.js');
 
 if(!module.parent) {
     app.listen(8000);
