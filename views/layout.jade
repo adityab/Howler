@@ -6,7 +6,7 @@ html(lang="en")
     script(type='text/javascript',src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js')
     script(type='text/javascript',src='/js/main.js')
     script(type='text/javascript',src='http://static.ak.fbcdn.net/connect/en_US/core.js')
-  body
+  body(style='background-color: #FFFAFF;')
     div.container
       -if(account && account.data.content.username)
         div(style='float:right;margin-top:20px;position:relative;left:-60px;')
@@ -18,7 +18,7 @@ html(lang="en")
             a.fb_button_medium(href='/auth/facebook')
               span#fb_login_text.fb_button_text Login
       h1
-        a(href='/') Howler 
+        a(href='/', class='alert-message success') Howler
         small an experimental twitter clone built with 
           strong node.js 
           on on top of 
